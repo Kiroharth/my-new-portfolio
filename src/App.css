@@ -13,7 +13,7 @@
   filter: drop-shadow(0 0 4em #ffffff83)
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #b464e2b6);
+  filter: drop-shadow(0 0 2em #b961ecd5);
 }
 
 @keyframes logo-spin {

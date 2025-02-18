@@ -14,9 +14,7 @@ function App() {
       </div>
       <h1>KASHIRIN KITO</h1>
       <div className="card">
-        <button>
-          EXPLORE
-        </button>
+        <button class="explore-button">EXPLORE</button>
       </div>
     </>
   )

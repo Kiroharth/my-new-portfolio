@@ -46,13 +46,71 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
+.explore-button:active::before {
+  animation: click-effect 0.3s ease;
+}
+
+@keyframes click-effect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Expand the border */
+  }
+  100% {
+    transform: scale(1); /* Shrink back to original size */
+  }
+}
+
+@keyframes gradient-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.explore-button {
+  position: relative;
+  padding: 0.6em 2.2em;
+  font-size: 1em;
+  font-weight: 500;
+  color: white;
+  background: #222; /* Button background color */
+  border: none;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: border-color 0.25s;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  transition: transform 0.2s ease;
+}
+
+/* Gradient border using a pseudo-element */
+.explore-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #ff0099, #493240, #ff0099, #493240);
+  background-size: 400% 400%;
+  animation: gradient-border 4s ease infinite;
+}
+
 button:hover {
-  border-color: #646cff;
+  border-color: #cccdda;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
 
 @media (prefers-color-scheme: light) {
   :root {
